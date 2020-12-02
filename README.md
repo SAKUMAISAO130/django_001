@@ -1,40 +1,40 @@
 環境構築手順
 
-■　ディレクトリ作成
+1.　ディレクトリ作成
 mkdir django_001
 cd django_001
 
 
-■　仮想環境　初期化
+1.　仮想環境　初期化
 python3 -m venv myvenv
 
 
-■　仮想環境　起動
+1.　仮想環境　起動
 source myvenv/bin/activate
 
 
-■　pip　更新
+1.　pip　更新
 python -m pip install --upgrade pip
 
 
-■　パッケージ一覧更新
+1.　パッケージ一覧更新
 djangogirls/ フォルダ内に requirements.txt という名前で保存してください。
 vim requirements.txt
 
 
-■　requirements.txt　に記載
+1.　requirements.txt　に記載
 Django~=2.2.4
 
 
-■　パッケージインストール
+1.　パッケージインストール
 pip install -r requirements.txt
 
 
-■　プロジェクト作成
+1.　プロジェクト作成
 django-admin startproject mysite .
 
 
-■　設定　変更
+1.　設定　変更
 --------
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 --------
@@ -47,27 +47,27 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 --------
 
 
-■　DB　構築
+1.　DB　構築
 python manage.py migrate
 
 
-■　サーバー起動
+1.　サーバー起動
 python manage.py runserver
 
 
-■　ブラウザ表示
+1.　ブラウザ表示
 http://127.0.0.1:8000/
 
 
-■　git　初期化
+1.　git　初期化
 git init
 
 
-■　gitignore
+1.　gitignore
 vim .gitignore
 
 
-■　gitignore　中身
+1.　gitignore　中身
 *.pyc
 *~
 /.vscode
@@ -76,5 +76,23 @@ myvenv
 db.sqlite3
 /static
 .DS_Store
+
+
+1.　pythonanywhere　を最新化する
+pip3.6 install --user pythonanywhere
+
+1.　GIT pull　してデプロイ
+pa_autoconfigure_django.py --python=3.6 https://github.com/<your-github-username>/my-first-blog.git
+
+
+
+
+
+
+
+
+
+
+
 
 
