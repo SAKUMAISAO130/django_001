@@ -25,13 +25,14 @@ SECRET_KEY = '#vw1ggf0u!6uk6%!&g!6c4#s1o9_js+eybycz%thk2-&y8je2w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'bbs.apps.BbsConfig',
+    'lunchmap.apps.LunchmapConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
