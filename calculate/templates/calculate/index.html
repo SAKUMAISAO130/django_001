@@ -1,0 +1,15 @@
+{% extends '../layout.html' %}
+
+{% block content %}
+
+    <a href="{% url 'calculate:new_file' %}">ファイルのアップロード</a>
+    <br>
+
+    <h2>ダウンロードファイル一覧</h2>
+    <br>
+
+    {% for file in file_obj %}
+        <p><a href="{{ file.upload.url }}"  download="{{ file.file_name }}">{{ file.file_name }}</a> {{ file.upload.size }}B</p>
+    {% endfor %}
+
+{% endblock %}
