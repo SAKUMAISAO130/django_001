@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from .models import Article
 from .forms import SearchForm
 from .forms import ArticleForm
+from django.contrib.auth.decorators import login_required
+
 
 def index(request):
     searchForm = SearchForm(request.GET)
@@ -63,7 +65,7 @@ def delete(request, id):
 
 
 
-
+@login_required
 def new(request):
     articleForm = ArticleForm()
 
@@ -74,7 +76,7 @@ def new(request):
     return render(request, 'bbs/new.html', context)
 
 
-
+@login_required
 def edit(request, id):
     article = get_object_or_404(Article, pk=id)
     articleForm = ArticleForm(instance=article)
