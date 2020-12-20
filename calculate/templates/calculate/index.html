@@ -1,15 +1,26 @@
-{% extends '../layout.html' %}
+{% extends 'layout.html' %}
 
 {% block content %}
 
-    <a href="{% url 'calculate:new_file' %}">ファイルのアップロード</a>
-    <br>
-
     <h2>ダウンロードファイル一覧</h2>
     <br>
+    <a href="{% url 'calculate:new_file' %}" class='btn btn-outline-primary'>ファイルのアップロード</a>
+    <br>
+    <br>
 
-    {% for file in file_obj %}
-        <p><a href="{{ file.upload.url }}"  download="{{ file.file_name }}">{{ file.file_name }}</a> {{ file.upload.size }}B</p>
-    {% endfor %}
+    <table  class='table table-striped table-hover'>
+        {% for file in file_obj %}
+        <tr>
+            <td>
+                <a href="{{ file.upload.url }}"  download="{{ file.file_name }}">{{ file.file_name }}</a>
+            </td>
+            <td>
+                    {{ file.upload.size }}B
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
 
+
+        
 {% endblock %}

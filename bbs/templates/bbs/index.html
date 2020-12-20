@@ -1,18 +1,21 @@
 {% extends 'layout.html' %}
 {% block content %}
-    <h1>paiza bbs</h1>
-    <p>{{ message }}</p>
+    <h1>▼ 連絡掲示板</h1>
+    <div>
+        <a href='{% url "bbs:new" %}' class='btn btn-outline-primary'>新規作成</a>
+    </div>
 
-
-	{% if searchForm %}
-	    <form action='{% url "bbs:index" %}' method='get'>
-	        <div class='form-group'>
-	            {{ searchForm }}
-	            <input type="submit" class="btn btn-outline-primary" value="OK" />
-	            <a href="{% url 'bbs:index' %}" class="btn btn-outline-secondary">クリア</a>
-	        </div>
-	    </form>
-    {% endif %}
+    <div>
+        {% if searchForm %}
+            <form action='{% url "bbs:index" %}' method='get'>
+                <div class='form-group'>
+                    {{ searchForm }}
+                    <input type="submit" class="btn btn-outline-primary" value="OK" />
+                    <a href="{% url 'bbs:index' %}" class="btn btn-outline-secondary">クリア</a>
+                </div>
+            </form>
+        {% endif %}
+    </div>
     
     
 
@@ -30,7 +33,4 @@
         {% endfor %}
     </table>
 
-    <div>
-        <a href='{% url "bbs:new" %}' class='btn btn-outline-primary'>新規</a>
-    </div>
 {% endblock %}

@@ -1,8 +1,8 @@
-{% extends './base.html' %}
+{% extends 'layout.html' %}
 {% load bootstrap4 %}
 
 {% block content %}
-    <h1>{{ message }}</h1>
+    <h1>▼ 連絡掲示板（新規作成）</h1>
 
     <form action='{% url "bbs:create" %}' method='post' class='form'>
         {% csrf_token %}

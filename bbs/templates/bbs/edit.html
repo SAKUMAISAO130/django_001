@@ -2,7 +2,7 @@
 {% load bootstrap4 %}
 
 {% block content %}
-    <h1>{{ message }}</h1>
+    <h1>▼ 連絡掲示板（編集）</h1>
 
     <form action='{% url "bbs:update" article.id %}' method='post' class='form'>
         {% csrf_token %}
