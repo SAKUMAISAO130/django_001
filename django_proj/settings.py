@@ -31,7 +31,6 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'calculate.apps.CalculateConfig',
     'accounts.apps.AccountsConfig',
     'bbs.apps.BbsConfig',
     'lunchmap.apps.LunchmapConfig',
@@ -42,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap4',
-    'django_cleanup.apps.CleanupConfig',  # django-cleanup
 ]
 
 MIDDLEWARE = [
@@ -127,6 +125,3 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-# ファイルアップロード
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

@@ -4,12 +4,12 @@
         <meta charset='utf-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
         <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
-        <style>body {padding-top: 55px;}</style>
-        <title>業務管理システム</title>
+        <style>body {padding-top: 80px;}</style>
+        <title>Lunchmap</title>
     </head>
     <body>
         <nav class='navbar navbar-expand-sm navbar-dark bg-dark fixed-top'>
-            <a class='navbar-brand' href='{% url "lunchmap:index" %}'>業務管理システム</a>
+            <a class='navbar-brand' href='{% url "lunchmap:index" %}'>Lunchmap</a>
             <ul class='navbar-nav'>
                 {% if user.is_authenticated %}
                     <li class='nav-item'>
@@ -28,35 +28,9 @@
                 {% endif %}
             </ul>
         </nav>
-        <div class='container-fluid'>
-            <div class="row">
-                <div class="col-md-2 d-none d-md-block sidebar">
-                    <ul class="list-group" style="padding-top: 20px;">
-                        <li class="list-group-item">
-                            <a href="/bbs/">連絡掲示板機能</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="/lunchmap/">地図登録機能</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="/calculate/">ファイル管理機能</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="/accounts/signup/">ユーザー登録機能</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="/accounts/login/">ログイン機能</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="/admin/">管理機能</a>
-                        </li>
-                    </ul>
-            </div>
-                <div class="col-md-10" style="padding-top: 20px;">
-                    {% block content %}
-                    {% endblock %}
-                </div>
-            </div>
+        <div class='container'>
+            {% block content %}
+            {% endblock %}
        </div>
     </body>
 </html>
